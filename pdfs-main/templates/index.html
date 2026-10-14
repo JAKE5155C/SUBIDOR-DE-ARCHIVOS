@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <main>
+        <h1>{{ title }}</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file">Selecciona un PDF (máximo 10 MB):</label>
+            <input id="file" name="file" type="file" accept="application/pdf,.pdf" required>
+            <button type="submit">Subir PDF</button>
+        </form>
+        <form action="/delete-uploads" method="post" onsubmit="return confirm('¿Eliminar todos los archivos subidos?');">
+            <button type="submit">Eliminar archivos subidos</button>
+        </form>
+        {% if uploaded_file %}
+        <p>PDF subido correctamente: <strong>{{ uploaded_file }}</strong></p>
+        {% endif %}
+        {% if message %}
+        <p>{{ message }}</p>
+        {% endif %}
+    </main>
+</body>
+</html>
