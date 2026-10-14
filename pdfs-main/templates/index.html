@@ -4,6 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            padding: 1rem;
+            background: #f2f6f1;
+            color: #24352b;
+            font-family: system-ui, sans-serif;
+        }
+        main {
+            width: min(100%, 32rem);
+            padding: 2rem;
+            background: #fff;
+            border: 1px solid #dce6dc;
+            border-radius: 8px;
+            box-shadow: 0 12px 36px rgba(36, 53, 43, 0.07);
+        }
+        main::before {
+            display: block;
+            width: 2.5rem;
+            height: 4px;
+            margin-bottom: 1.25rem;
+            border-radius: 4px;
+            background: #37845a;
+            content: "";
+        }
+        h1 { margin: 0 0 1.5rem; font-size: 1.7rem; }
+        form { margin-top: 1rem; }
+        label { display: block; margin-bottom: 0.5rem; }
+        input[type="file"] {
+            display: block;
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.65rem;
+            border: 1px dashed #a9bcae;
+            border-radius: 6px;
+            background: #f8faf7;
+        }
+        button {
+            padding: 0.65rem 1rem;
+            border: 1px solid #37845a;
+            border-radius: 6px;
+            background: #37845a;
+            color: #fff;
+            font: inherit;
+            cursor: pointer;
+        }
+        form + form button {
+            border-color: #d2ddd3;
+            background: #fff;
+            color: #405448;
+        }
+        p { color: #405448; overflow-wrap: anywhere; }
+        @media (max-width: 480px) {
+            main { padding: 1.5rem; }
+        }
+    </style>
 </head>
 <body>
     <main>
